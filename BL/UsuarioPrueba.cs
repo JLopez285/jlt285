@@ -12,12 +12,11 @@ namespace BL
     {
         public static ML.Result Add(ML.UsuarioPrueba usuario)
         {
-            //Se crea una instancia de Result
             ML.Result result = new ML.Result();
-            //El try nos sirve para idntificar si hay un error al momento de conectarnos
+           
             try
             {
-                //Trae la cadena de coleccion de DL.Conexion guarda una conexion de SQL en context y para eso se necesita la cadena de coneccion
+                
                 using (OleDbConnection context = new OleDbConnection(DL.Conexion.GetConnectionString()))
                 {
                     // Agregamos la accion que se quiere realizar en SQL es importante mantrener el orden, para esto es necesario crear un insert en BD para poder sacarlo mas fácil.
@@ -25,6 +24,7 @@ namespace BL
                     //Insert into SINOMINA.Examen (EXID,EXNOMBRE,EXAPEPAT,EXAPEMAT,EXFECHA,EXMONTO)values(?,?,?,?,?,?)
                     using (OleDbCommand cmd = new OleDbCommand())
                     {
+                        //--
                         cmd.Connection = context;
                         cmd.CommandText = query;
                         OleDbParameter[] collection = new OleDbParameter[2];
