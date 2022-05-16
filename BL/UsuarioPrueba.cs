@@ -21,7 +21,7 @@ namespace BL
                 {
                     // Agregamos la accion que se quiere realizar en SQL es importante mantrener el orden, para esto es necesario crear un insert en BD para poder sacarlo mas fácil.
                     string query = "INSERT INTO [UsuarioPrueba]([Nombre] ,[ApellidoPaterno]) VALUES (?,?)";
-                    //Insert into SINOMINA.Examen (EXID,EXNOMBRE,EXAPEPAT,EXAPEMAT,EXFECHA,EXMONTO)values(?,?,?,?,?,?)
+                    //Insert into SINOMINA.Examen (EXID,EXNOMBRE,EXAPEPAT,EXAPEMAT,EXFECHA,EXMONTO)values(?,?,?,?,?,?)//SYSTEM.Configuration
                     using (OleDbCommand cmd = new OleDbCommand())
                     {
                         //--

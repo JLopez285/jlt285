@@ -26,8 +26,11 @@ namespace SL_WebAPI.Controllers
             }
 
         }
-
-        [HttpPost]
+        //{
+        //"Nombre": "Isaias",
+        //"ApellidoPaterno":"Casanueva"
+        //} para probar json en postman
+    [HttpPost]
         [Route("usuario/Add")]
         public IHttpActionResult Add([FromBody] ML.UsuarioPrueba usuario)
         {
