@@ -21,8 +21,8 @@ namespace BL
                 using (OleDbConnection context = new OleDbConnection(DL.Conexion.GetConnectionString()))
                 {
                     // Agregamos la accion que se quiere realizar en SQL es importante mantrener el orden, para esto es necesario crear un insert en BD para poder sacarlo mas fácil.
-                    string query = "INSERT INTO [UsuarioPrueba]([Nombre] ,[ApellidoPaterno]) VALUES (@Nombre,@ApellidoPaterno)";
-
+                    string query = "INSERT INTO [UsuarioPrueba]([Nombre] ,[ApellidoPaterno]) VALUES (?,?)";
+                    //Insert into SINOMINA.Examen (EXID,EXNOMBRE,EXAPEPAT,EXAPEMAT,EXFECHA,EXMONTO)values(?,?,?,?,?,?)
                     using (OleDbCommand cmd = new OleDbCommand())
                     {
                         cmd.Connection = context;
@@ -67,7 +67,7 @@ namespace BL
             {
                 using (OleDbConnection context = new OleDbConnection(DL.Conexion.GetConnectionString()))
                 {
-                    string delete = "DELETE FROM UsuarioPrueba Where IdUsuario = @IdUsuario";
+                    string delete = "DELETE FROM UsuarioPrueba Where IdUsuario = (?)";
 
                     using (OleDbCommand cmd = new OleDbCommand())
                     {
